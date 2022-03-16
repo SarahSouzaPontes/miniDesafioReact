@@ -1,6 +1,4 @@
-import reactDom from 'react-dom';
 import './App.css';
-
 import imagemLogo from './assets/logo.svg';
 import imagemNext from './assets/next.svg';
 import imagemPause from './assets/pause.svg';
@@ -8,90 +6,55 @@ import imagemPlay from './assets/play.svg';
 import imagemPrevious from './assets/previous.svg';
 import imagemProfile from './assets/profile.jpg';
 import imagemStop from './assets/stop.svg';
-import robinson from './assets/robinson.jpg';
-import casablanca from './assets/casablanca.jpg';
-import bonequinha from './assets/bonequinha.jpg';
-import star from './assets/star.jpg';
-
+import musics from './musics'
+import { useState, useRef } from 'react'
 
 function App() {
+  const [music, setMusic] = useState({})
+  const [isplay, setisplay] = useState(false)
+  const player = useRef()
+  function handleMusic(msc) {
+    setMusic(msc)
+  }
+  function toggleButton() {
+    const previous = isplay
+    setisplay(!previous)
+    if (!previous) {
+      player.current.play()
+    } else {
+      player.current.pause()
+    }
+  }
   return (
     <div className="container">
       <header>
-        <hr></hr>
-        <div className="logoCubos">
-          <img src={imagemLogo}></img>
-        </div>
+        <img src={imagemLogo} />
         <div className="login">
-          <img src={imagemProfile}></img>
-          <p>Bem vindo, Daniel.</p>
+          <img src={imagemProfile} />
+          <p>Bem vindo, Sarah.</p>
         </div>
-      </header>
+      </header >
       <div className="divPlayList">
         <h1>The best play list</h1>
-        <hr></hr>
         <div className="cards">
-          <ul>
-            <li>
-              <div className="card1">
-                <img src={casablanca}></img>
-                <h1>As Time Goes By – Casablanca (1942)</h1>
-                <span>“Play it again, Sam”. Uma das frases mais famosas do cinema, na verdade nunca dita (o correto é “play it, Sam”), gira em torno de uma canção escrita dez anos antes por Herman Hupfeld. No filme, Ingrid Bergman pede ao pianista (Dooley Wilson) que toque a música que marcou seu romance com o personagem de Humphrey Bogart.</span>
-              </div>
-            </li>
-            <li>
-              <div className="card2">
-                <img src={bonequinha}></img>
-                <h1>Moon River – Bonequinha de Luxo (1961)</h1>
-                <span>Muita gente não sabe, mas a clássica canção “Moon River”, interpretada por dezenas de artistas ao longo das décadas, incluindo Frank Sinatra, foi escrita especialmente para o filme “Bonequinha de Luxo” e adaptada para o alcance vocal de Audrey Hepburn.</span>
-              </div>
-            </li>
-            <li>
-              <div className="card3">
-                <img src={robinson}></img>
-                <h1>Mrs Robinson – A Primeira Noite de Um Homem (1967)</h1>
-                <span>Dustin Hoffman se envolve com uma mulher mais velha no filme de 1967, e é exatamente sobre essa situação que fala a música de Simon e Garfunkel, criada para o longa. Não é à toa que “Mrs. Robinson” se tornou uma piada interna, representando todas as mulheres que se relacionam com garotos mais jovens.</span>
-              </div>
-            </li>
-            <li>
-              <div className="card4">
-                <img src={star}></img>
-                <h1>Marcha Imperial – Star Wars (1977)</h1>
-                <span>Só de ouvir três ou quatro notas da composição de John Williams, a imagem do vilão Darth Vader e seu exército de Stormtroopers já vem à mente, acompanhada por naves espaciais e batalhas de sabres de luz. Todo um universo fantástico é representado por este tema inesquecível.</span>
-              </div>
-            </li>
-          </ul>
+          {musics.map((music) => (
+            <div key={music.id} className="card">
+              <img onClick={() => handleMusic(music)} src={music.cover} alt='' />
+              <h2>{music.title}</h2>
+              <p>{music.description}</p>
+            </div>
+          ))}
         </div>
-
       </div>
-
       <footer>
-        <div className="controlBar">
-
+        <div><h3>{music.title}</h3><h4>{music.artist}</h4></div>
+        <div className="controls">
+          <audio src={music.url} ref={player} />
+          <button><img id="stop" src={imagemStop} /></button>
+          <button> <img id="next" src={imagemPrevious} /></button>
+          <button onClick={toggleButton}> <img id="play" src={isplay ? imagemPause : imagemPlay} /></button>
+          <button><img id="previous" src={imagemNext} /></button>
         </div>
-
-        <div className="nameMusic">
-          <h1>Violão acústico</h1>
-          <p>Robert Mayer</p>
-
-        </div>
-
-        <div className="progressBar">
-          <p id="curretTime"></p>
-          <p id="endTime"></p>
-          <hr id="linhaCinza"></hr>
-          <hr id="linhaRosa"></hr>
-          <div className="circulo"></div>
-
-
-        </div>
-
-        <div className="controls"></div>
-        <img id="stop" src={imagemStop}></img>
-        <img id="next" src={imagemNext}></img>
-        <img id="pause" src={imagemPause}></img>
-        <img id="play" src={imagemPlay}></img>
-        <img id="previous" src={imagemPrevious}></img>
       </footer>
     </div >
   );
