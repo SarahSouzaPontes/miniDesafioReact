@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.container {
+position: relative;
+width: 1440px;
+height: 900px;
+background: linear-gradient(180deg, #0C0505 0%, #3A3535 47.92%, #5E5858 100%);
+}
+
+header{
+position: absolute;
+width: 1440px;
+height: 97px;
+left: 0px;
+top: 32px;
+}
+
+header hr{
+position: absolute;
+width: 1440px;
+height: 0px;
+left: 0px;
+top: 128px;
+
+border: 1px solid #6A6363;
+transform: rotate(0.05deg);
+}
+.divPlayList{ 
+position: absolute;
+width: 1121px;
+height: 499px;
+left: 159px;
+top: 220px;
+}
+.divPlayList h1{
+position: absolute;
+width: 190px;
+height: 25.06px;
+left: 159px;
+top: 238px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+
+color: #FFFFFF;
+}
+
+.divPlayList hr{
+position: absolute;
+width: 1120px;
+height: 0px;
+left: 159px;
+top: 286.2px;
+
+border: 1px solid #6A6363;
+transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.cards{ 
+position: absolute;
+width: 1121px;
+height: 420.27px;
+left: 159px;
+top: 298.73px;
+object-fit: contain;
+}
+
+.card1{ 
+position: absolute;
+width: 260px;
+height: 420.27px;
+left: 159px;
+top: 298.73px;
+}
+
+.card1 img{ 
+width: 100%;
+height: 100%;
+object-fit: scale-down;
+
+}
+
+.card2{ 
+position: absolute;
+width: 260px;
+height: 420.27px;
+left: 446px;
+top: 298.73px;
+}
+
+.card2 img{ 
+width: 100%;
+height: 100%;
+object-fit: contain;
+
+}
+
+.card3{ 
+position: absolute;
+width: 260px;
+height: 420.27px;
+left: 733px;
+top: 298.73px;
+}
+
+.card3 img{ 
+width: 100%;
+height: 100%;
+object-fit: contain;
+
+}
+
+.card4{ 
+position: absolute;
+width: 260px;
+height: 420.27px;
+left: 1020px;
+top: 298.73px;
+}
+
+.card4 img{ 
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+.login img{
+position: absolute;
+width: 40px;
+height: 40px;
+left: 1225px;
+top: 40px;
+background: url(./assets/profile.jpg);
+border: 2px solid #6A6363;
+box-sizing: border-box;
+border-radius: 50%;
+}
+.login p{
+position: absolute;
+width: 135px;
+height: 18px;
+left: 1273px;
+top: 50px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+color: #FFFFFF;
+}
+    
+footer{
+position: absolute;
+width: 1440px;
+height: 132px;
+left: 0px;
+top: 767px;
+}
+.progressBar{
+position: absolute;
+width: 642px;
+height: 20px;
+left: 399px;
+top: 855px;
+
+}
+.progressBar p{
+position: absolute;
+width: 33px;
+height: 20px;
+left: 399px;
+top: 855px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #CCC3C3;
+}
+#linhaRosa{
+position: absolute;
+width: 218px;
+height: 0px;
+left: 440px;
+top: 867px;
+
+border: 4px solid #E5007B;
+}
+#linhaCinza{
+    position: absolute;
+width: 560px;
+height: 0px;
+left: 440px;
+top: 867px;
+
+border: 4px solid #CCC3C3;
+transform: rotate(0.05deg);
+}
+#stop{
+position: absolute;
+width: 48px;
+height: 48px;
+left: 512px;
+top: 790px;  
+}
+#pause, #play{
+position: absolute;
+width: 64px;
+height: 64px;
+left: 688px;
+top: 783px;
+}
+#next{
+position: absolute;
+width: 48px;
+height: 48px;
+left: 792px;
+top: 790px;
+}
+#previous{
+position: absolute;
+width: 48px;
+height: 48px;
+left: 600px;
+top: 790px;
+}
+li{
+list-style: none;
+}
+.nameMusic{
+    position: absolute;
+    width: 166px;
+    height: 56px;
+    left: 32px;
+    top: 791px;
+}
+.nameMusic h1{
+    position: absolute;
+    width: 166px;
+    height: 28px;
+    left: 32px;
+    top: 791px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #FFFFFF;  
+}
+.nameMusic p{
+    position: absolute;
+width: 117px;
+height: 20px;
+left: 32px;
+top: 827px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+}
